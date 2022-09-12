@@ -3,13 +3,24 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import ContentContext from './context/ContentContext'
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
+function Main() {
+    return(
+        <React.StrictMode>
+            <ContentContext.Provider value={"hui"}>
+                <App />
+            </ContentContext.Provider>
+
+        </React.StrictMode>
+    )
+}
 root.render(
   <React.StrictMode>
-    <App />
+    <Main />
   </React.StrictMode>
 );
 
